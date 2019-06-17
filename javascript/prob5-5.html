@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+/*Define and test a function in JavaScript which accepts a string as an
+argument and which returns a new string consisting of every other character
+from the argument string, starting with the character at position 0.
+*/
+
+<script>
+
+//I think a string[::2] might also work here, look it up.
+
+function stringskipchar(strg){
+  var index = 0;
+  var output = '';
+  while (index < strg.length){
+    output = output.concat(strg[index]);
+    index += 2;
+  }
+  return output;
+}
+
+</script>
+</body>
+</html>

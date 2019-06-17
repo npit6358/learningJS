@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<script src="prob3.js"></script>
+<script>
+
+function invoice(price, number){
+  var tot = (shipping(price*number*1.08) + price*number*1.08);
+  return "Your total cost is: " + tot;
+}
+
+window.alert(invoice(10, 9));
+</script>
+</body>
+</html>

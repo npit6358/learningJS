@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+/*
+5. Define and test a function in JavaScript that takes an array and returns a
+new array that contains all the elements of the first array minus all the
+duplicates.
+*/
+//this one is a different intepretation of the question prompt.
+//look at prob5-4b.html for the answer to the above.
+
+
+
+
+<html>
+<body>
+
+<h1>Common elements are: </h1>
+<p id ="output"></p>
+
+<script>
+
+//check if element is in duplicate in another list.  returns true if duplicate.
+function is_dup(element, arr){
+  var len = arr.length;
+  var count = 0;
+
+//count occurences of element in arr.
+  var index = 0;
+  for (index = 0; index < len && count < 2; index++){
+    if (arr[index] == element){
+      count++;
+    }
+  }
+//output result
+  if (count > 1){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+//function ouputs a list without duplicate elements.
+function no_dups(arr){
+  var newarr = [];
+  var index = 0;
+  for(index=0; index < arr.length; index++){
+    //replace duplicate with undefined
+    if (is_dup(arr[index],arr)){
+      newarr[index] = arr[index];
+    }
+  }
+  document.getElementById("output").textContent = newarr.join(" ");
+}
+
+
+</script>
+</body>
+</html>

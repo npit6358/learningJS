@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+/*Prob1-day5:
+Define and test functions in both JavaScript and Python, that accept a
+dictionary and a value, and return show many times that value occurs in
+the dictionary.
+*/
+
+<script>
+
+var dictionary = {};
+
+function dictsearch(dict, val){
+  var count = 0;
+
+  for (var key in dict){
+    if (dict[key]==val){
+      count++;
+    }
+  }
+  console.log(count);
+}
+
+dictionary = {'a':1, 'b':2,'c':1,'d':1};
+dictsearch(dictionary, 1);
+</script>
+</body>
+</html>

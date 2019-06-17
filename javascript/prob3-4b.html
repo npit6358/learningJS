@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+
+/*
+3. Define and test a function in JavaScript that accepts two arrays and
+returns an array that contains only the elements that are common between the
+arrays (without duplicates). Make sure your program works on two arrays of
+different sizes.
+*/
+
+<html>
+<body>
+
+<h1>Common elements are: </h1>
+<p id ="output"></p>
+
+<script>
+/* Function checks if element is located in duplicate in another list.
+Don't assume that element is already located in array we're checking, so our
+count starts at 0.
+*/
+function is_dup(element, arr){
+  var len = arr.length;
+  var count = 0;
+
+//count occurences of element in arr.
+  var index = 0;
+  for (index = 0; index < len && count < 2; index++){
+    if (arr[index] == element){
+      count++;
+    }
+  }
+//output result
+  if (count > 1){
+    return true;
+  }
+  else {
+    return false;
+  }
+}
+
+//function to print an array.
+function print_arr(arr){
+    document.getElementById("output").textContent = arr.join(" ");
+//  console.log(arr);
+}
+
+//function to find and store common elements w/o duplicates in new array.
+function common_elements(arr1, arr2){
+  var outarray = [];
+  var len1 = arr1.length;
+  var len2 = arr2.length;
+
+  var index = 0;
+  var index2 = 0;
+//this puts all common elemnts from both arrays, excluding duplicates, into
+//a new array.
+  for (index = 0; index < len1; index++){
+    for (index2 = 0; index2 < len2; index2++){
+      if (arr1[index] == arr2[index2]){
+        if (!(is_dup(arr1[index], outarray))){
+          outarray.push(arr1[index]);
+        }
+      }
+    }
+  }
+  print_arr(outarray)
+}
+</script>
+
+
+
+</body>
+</html>

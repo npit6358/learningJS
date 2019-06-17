@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+/*
+4. Define and test a function in JavaScript that accepts an array of numbers
+(for example, a = [5, 10, 15, 20, 25]) and makes a new array of only the first
+and last elements of the given array.
+*/
+
+<html>
+<body>
+<script>
+function first_last(arr){
+  outarr = [];
+  //destructive
+//  outarr.push(arr.shift());
+//  outarr.push(arr.pop());
+
+  //non-destructive
+  outarr[0] = arr[0];
+  outarr[1] = arr[arr.length - 1];
+
+  return outarr;
+}
+</script>
+</body>
+</html>

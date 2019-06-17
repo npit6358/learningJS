@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+/*Write and test a function in JavaScript named 'implode' that takes an array
+(JS) or list (Python) of strings and returns a single string consisting of
+the individual characters of all the argument strings, in alphabetic order,
+with no repeats.
+*/
+
+<p id="output"> Stuff </p>
+
+<script>
+function elementOf(arr, value){
+  if (typeof(arr)=="string"){
+    var arrwork = arr.split("");
+  }
+  else{
+    for (el in arr){
+      arrwork[el] = arr[el];
+    }
+  }
+
+  for(var index = 0; index < arrwork.length; index++){
+    if (arrwork[index]==value){
+      return true;
+    }
+  }
+  //if we get to this point then value is not an element of arr.
+  return false;
+}
+
+//turns string into an array of individual characters.
+//Can do: return str.split(""); instead.
+function explode(str){
+  return str.split("");
+}
+</script>
+
+
+<script>
+function implode(arr){
+  console.log(0, arr[0]);
+//copy our input array.
+  var tmparr = [];
+  for (var i = 0; i < arr.length; i++){
+    tmparr[i] = arr[i];
+  }
+//  console.log(1,tmparr);
+
+//Make string out of our array of strings, no separating characters.
+  var jointwords = tmparr.join("");
+//  console.log(2,jointwords);
+
+//Turn long string into an array of characters which we then sort.
+  var workinglist = explode(jointwords);
+//  console.log(3,workinglist);
+  workinglist.sort();
+//  console.log(4,workinglist);
+//Turn our sorted array of chars into a string without duplicates.
+//includes non-alphabetic characters as well
+  var outstring = ' ';
+  for (var index = 0; index < workinglist.length; index++){
+    if (!elementOf(outstring, workinglist[index])){
+      outstring = outstring + workinglist[index];
+    }
+  }
+
+//  console.log(outstring);
+  document.getElementById("output").textContent = outstring;
+}
+
+implode(prompt("what's your array of strings?  "));
+
+</script>
+</body>
+</html>

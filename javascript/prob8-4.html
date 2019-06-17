@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+/*Prob7-day4, JavaScript version:
+	•	Write and test functions in both JavaScript and Python that take a string
+	and return an array (JS) or list (Python) consisting of the individual
+	characters of the argument string, each character advanced by 3 letters in
+	the English alphabet.
+*/
+<html>
+<body>
+  <h1>String advanced by three chars: </h1>
+  <p id ="output"></p>
+
+<script>
+function charAdvance(str){
+  var advance = 3;
+  var cur_char = '';
+  var new_char = '';
+  var answer = '';
+
+  for (index in str){
+    cur_char = str.charAt(index);
+		//deal with upper and lower case seperately. have to norm new_char function
+		//differently for each case.
+    if ('A'<= cur_char && cur_char <= 'Z'){
+			new_char = String.fromCharCode((cur_char.charCodeAt(0)+advance-65)%26 +
+			65);
+      answer = answer.concat(new_char);
+    }
+		else if ('a'<= cur_char && cur_char <= 'z'){
+			new_char = String.fromCharCode((cur_char.charCodeAt(0)+advance-97)%26 +
+			97);
+			answer = answer.concat(new_char);
+		}
+    else {
+      answer = answer.concat(cur_char);
+    }
+  }
+//  console.log(answer);
+//    document.getElementById("output").textContent = answer;
+	return answer.split();
+}
+charAdvance('Yesterday  is  now  today');
+</script>
+
+</body>
+</html>

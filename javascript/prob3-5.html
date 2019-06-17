@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+/*Define and test functions in both JavaScript and Python, that accept a
+dictionary and a value, and return a list of the keys which are paired with
+that value in the dictionary.
+*/
+
+<script>
+
+var dictionary = {};
+var list = [];
+
+function keysearch(dict, val){
+  var count = 0;
+
+  for (var key in dict){
+    if (dict[key]==val){
+      list.push(key);
+    }
+  }
+  console.log(list);
+}
+
+</script>
+</body>
+</html>

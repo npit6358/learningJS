@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+/*Prob6-4, JavaScript version:
+•	Write and test functions in both JavaScript and Python, named 'explode'
+that take a string and return an array (JS) or list (Python) consisting of
+the individual characters of the argument string.
+*/
+<html>
+<body>
+  <h1>Common elements are: </h1>
+  <p id ="output"></p>
+<script>
+  function explode(str){
+    answer = [];
+    for (index in str){
+      answer.push(str.charAt(index));
+    }
+    document.getElementById("output").textContent = answer;
+//    console.log(answer);
+  }
+</script>
+
+</body>
+</html>
